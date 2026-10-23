@@ -1,0 +1,113 @@
+{
+  "id": "tvenvivo",
+  "name": "TV en Vivo",
+  "version": "0.1.0",
+  "apiVersion": 9,
+  "entry": "plugin.js",
+  "icon": "icon.png",
+  "description": "Canales de TV en vivo de tvenvivo.org dentro de Kino: deportes, TV abierta de Latinoamérica, cine, documentales e infantil, con sección propia, categorías y búsqueda.",
+  "author": "xuper-plugin",
+  "homepage": "https://github.com/xuper-plugin/kino-plugin-tvenvivo",
+  "hosts": [
+    "www.tvenvivo.org",
+    "regionales.saohgdassregions.com",
+    "deportes.ksdjugfssddeports.com"
+  ],
+  "capabilities": [
+    "channels",
+    "home",
+    "search",
+    "browse",
+    "scopedSearch",
+    "resolve"
+  ],
+  "categories": [
+    "live"
+  ],
+  "color": "#58B8FF",
+  "section": {
+    "label": "TV en Vivo",
+    "labelEn": "Live TV"
+  },
+  "theme": {
+    "accent": "#58B8FF",
+    "onAccent": "#04121F",
+    "background": "#060809",
+    "surface": "#0F151C",
+    "highlight": "#A99BFF"
+  },
+  "telemetry": true,
+  "settings": [
+    {
+      "key": "contentSection",
+      "type": "section",
+      "label": "Contenido",
+      "labelEn": "Content"
+    },
+    {
+      "key": "showAdult",
+      "type": "toggle",
+      "label": "Mostrar canales para adultos",
+      "labelEn": "Show adult channels",
+      "hint": "Siguen tras tu código 18+.",
+      "hintEn": "They stay behind your 18+ code.",
+      "default": false
+    },
+    {
+      "key": "playSection",
+      "type": "section",
+      "label": "Reproducción",
+      "labelEn": "Playback"
+    },
+    {
+      "key": "source",
+      "type": "select",
+      "label": "Opción preferida",
+      "labelEn": "Preferred option",
+      "hint": "Si falla, se prueba otra sola.",
+      "hintEn": "If it fails, another is tried.",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "Opción 1",
+          "labelEn": "Option 1"
+        },
+        {
+          "value": "2",
+          "label": "Opción 2",
+          "labelEn": "Option 2"
+        },
+        {
+          "value": "3",
+          "label": "Opción 3",
+          "labelEn": "Option 3"
+        }
+      ]
+    },
+    {
+      "key": "toolsSection",
+      "type": "section",
+      "label": "Estado",
+      "labelEn": "Status"
+    },
+    {
+      "key": "siteStatus",
+      "type": "status",
+      "label": "Catálogo",
+      "labelEn": "Catalog"
+    },
+    {
+      "key": "testChannel",
+      "type": "action",
+      "label": "Probar la señal",
+      "labelEn": "Test the signal"
+    },
+    {
+      "key": "refreshCatalog",
+      "type": "action",
+      "label": "Buscar canales nuevos",
+      "labelEn": "Look for new channels"
+    }
+  ]
+}
