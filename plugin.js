@@ -8,6 +8,12 @@
 //   core.php?canal=<id> (with the site as Referer) -> the signed player address (stream.php?...&sig=...)
 //   stream.php -> a page whose player holds the tokenized HLS manifest (/playlist/<n>/index.m3u8?token=...)
 
+
+// Kino waits for every request a call left running before it delivers the call's answer (quickjs-kt joins the pending async work), so a call that
+// answered early at its own deadline or guard was still held until the requests it no longer needed ended. Asking Kino to drop what a call leaves
+// running (the prelude reads this flag after every call; Kino 0.9.54 and later, an older one ignores it) lets the answer leave when it is ready.
+globalThis.__kinoDropPendingFetches = true;
+
 const BASE = "https://www.tvenvivo.org";
 
 // ---- 1. texts ----------------------------------------------------------------------------------------------------
